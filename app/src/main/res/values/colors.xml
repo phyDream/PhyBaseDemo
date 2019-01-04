@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#393a3e</color>
+    <!--<color name="colorPrimaryDark">#303F9F</color>-->
+    <color name="colorAccentDark">#d33a31</color>
+    <!--<color name=""-->
     <color name="colorAccent">#FF4081</color>
+    <color name="titleBarColor">#393a3e</color>
+    <color name="textColor_white">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="textColor_defult">#2d2d2d</color>
+    <color name="textColor_popItem">#3d3a3a</color>
+    <color name="super_light_grey">#efefef</color>
+    <color name="super_grey">#d6d5d5</color>
+    <color name="video_select">#aee7ff</color>
+    <color name="cancel_select">#3da0ca</color>
+    <color name="videoTitle_color">#000000</color>
+    <color name="videoTime_color">#878686</color>
+    <color name="videoSize_color">#878686</color>
+    <color name="videoExtension_color">#75bbf9</color>
+    <color name="bg_video_view">#80000000</color>
+    <color name="background_gray">#ffa5a5a5</color>
+    <color name="background_gray_light">#ffbababa</color>
+    <color name="recover_screen_text">#1BB4E6</color>
+    <color name="videoCountTextColor">#504f4f</color>
+
+    <color name="seek_background">#809e9e9e</color>
+    <color name="divider">#b0dcdbdb</color>
+    <color name="seek_progress">#1BB4E6</color>
+    <color name="seek_secondary_progress">#1BB4E6</color>
+    <color name="seek_ball">#ffffffff</color>
+    <color name="video_skip">#1BB4E6</color>
+
+    <color name="text_hint">#55ffffff</color>
+    <color name="text_content">#ffffff</color>
+    <color name="media_quality_selected">#1BB4E6</color>
+
+    <!--背景色 - 基本-->
+    <color name="bg_base">#EBEBEB</color>
+    <!--背景色 - 顶部栏-->
+    <color name="bg_top_bar">#1BB4E6</color>
+    <!--背景色 - 顶部栏按钮按下-->
+    <color name="bg_top_bar_btn_press">#1996bf</color>
+
 </resources>

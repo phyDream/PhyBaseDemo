@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titleHeight"
+        android:background="@color/bg_top_bar"
+        android:orientation="horizontal"
+        app:popupTheme="@style/toolbarMenuStyle">
+
+        <TextView
+            android:id="@+id/left_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/select_btn_top_press"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:ellipsize="middle"
+            android:singleLine="true"
+            android:maxEms="12"
+            android:drawableLeft="@drawable/ic_back"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/center_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text=""
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/right_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:src="@drawable/more"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/select_btn_top_press"
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:visibility="gone"
+            android:textSize="14sp"
+            android:textColor="@color/white"/>
+    </android.support.v7.widget.Toolbar>
+</merge>
