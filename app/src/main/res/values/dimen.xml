@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--顶部栏-->
     <dimen name="titleHeight">48dp</dimen>
     <dimen name="titleTextSize">20sp</dimen>
     <dimen name="titleImgWidth">24dp</dimen>
     <dimen name="titleImgHeight">24dp</dimen>
-    <dimen name="videoTitle_size">16sp</dimen>
-    <dimen name="videoTime_size">12sp</dimen>
-    <dimen name="videoSize_size">12sp</dimen>
-    <dimen name="videoExtension_size">10sp</dimen>
 
-    <dimen name="control_bar_height">46dp</dimen>
-    <dimen name="settings_btn_width">44dp</dimen>
-    <dimen name="aspect_btn_height">20dp</dimen>
-    <dimen name="aspect_btn_size">30dp</dimen>
-
-    <dimen name="danmaku_input_options_height">48dp</dimen>
+    <!--list item-->
+    <dimen name="itemHeight">64dp</dimen>
+    <dimen name="itemTextSize">16sp</dimen>
+    <dimen name="itemImgWidth">48dp</dimen>
+    <dimen name="itemImgHeight">40dp</dimen>
 
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
@@ -30,4 +27,7 @@
     <dimen name="toolBar_icon_height">20dp</dimen>
 
     <dimen name="small_margin">10dp</dimen>
+
+    <dimen name="meun_item_width">160dp</dimen>
+    <dimen name="meun_item_height">48dp</dimen>
 </resources>

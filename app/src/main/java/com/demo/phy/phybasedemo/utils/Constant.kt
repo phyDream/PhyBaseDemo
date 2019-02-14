@@ -21,4 +21,9 @@ object Constant{
     val Top250 = "Top250"
 
     const val MOVIE_DATAIL_TAG = "MovieDatail"
+
+    //region 编号
+    val TAG_MVP = 1
+    val TAG_DIALOG = 2
+    //endregion
 }

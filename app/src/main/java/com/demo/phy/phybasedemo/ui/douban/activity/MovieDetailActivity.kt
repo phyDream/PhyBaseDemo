@@ -2,8 +2,8 @@ package com.demo.phy.phybasedemo.ui.douban.activity
 
 import com.demo.phy.phybasedemo.R
 import com.demo.phy.phybasedemo.base.BaseActivity
-import com.demo.phy.phybasedemo.mvp_presenter.MovieDetailPresenter
-import com.demo.phy.phybasedemo.mvp_view.MovieDetailView
+import com.demo.phy.phybasedemo.mvppresenter.MovieDetailPresenter
+import com.demo.phy.phybasedemo.mvpview.MovieDetailView
 
 class MovieDetailActivity : BaseActivity<MovieDetailView,MovieDetailPresenter>(),MovieDetailView {
 
@@ -22,7 +22,7 @@ class MovieDetailActivity : BaseActivity<MovieDetailView,MovieDetailPresenter>()
 
     }
 
-    override fun setLinstener() {
+    override fun initListener() {
 
     }
 

@@ -39,8 +39,19 @@
     <!--背景色 - 基本-->
     <color name="bg_base">#EBEBEB</color>
     <!--背景色 - 顶部栏-->
-    <color name="bg_top_bar">#1BB4E6</color>
+    <color name="bg_top_bar">#393a3e</color>
     <!--背景色 - 顶部栏按钮按下-->
-    <color name="bg_top_bar_btn_press">#1996bf</color>
+    <color name="bg_top_bar_btn_press">#84868A</color>
+
+    <!--字体颜色 - 正文、标题-->
+    <color name="textColor1">#4A4A4A</color>
+    <!--字体颜色 - 黯淡-->
+    <color name="textColor2">#9E9E9E</color>
+
+    <!--按钮背景色 - 白色按钮按下-->
+    <color name="btn_press_white">#e1dede</color>
+
+    <color name="menu_bg">#49484b</color>
+    <color name="menu_bg_press">#3A393C</color>
 
 </resources>

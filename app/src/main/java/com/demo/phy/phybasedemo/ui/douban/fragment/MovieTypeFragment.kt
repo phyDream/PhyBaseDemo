@@ -13,8 +13,8 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import com.demo.phy.phybasedemo.R
 import com.demo.phy.phybasedemo.base.BaseFragment
 import com.demo.phy.phybasedemo.data.bean.MovieDoubanResponseBean
-import com.demo.phy.phybasedemo.mvp_presenter.MovieTypePresenter
-import com.demo.phy.phybasedemo.mvp_view.MovieTypeView
+import com.demo.phy.phybasedemo.mvppresenter.MovieTypePresenter
+import com.demo.phy.phybasedemo.mvpview.MovieTypeView
 import com.demo.phy.phybasedemo.ui.douban.activity.MovieDetailActivity
 import com.demo.phy.phybasedemo.ui.douban.adapter.MovieListAdapter
 import com.demo.phy.phybasedemo.utils.LogUtils

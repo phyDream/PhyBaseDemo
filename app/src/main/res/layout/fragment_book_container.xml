@@ -2,7 +2,7 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context="com.example.a82353.kotlindemo.ui.fragment.BookContainerFragment">
+             tools:context="com.demo.phy.phybasedemo.ui.douban.fragment.BookContainerFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

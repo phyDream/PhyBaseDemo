@@ -6,8 +6,8 @@ import android.support.v4.app.Fragment
 import android.view.View
 import com.demo.phy.phybasedemo.R
 import com.demo.phy.phybasedemo.base.BaseFragment
-import com.demo.phy.phybasedemo.mvp_presenter.BookContainerPresenter
-import com.demo.phy.phybasedemo.mvp_view.BookContainerView
+import com.demo.phy.phybasedemo.mvppresenter.BookContainerPresenter
+import com.demo.phy.phybasedemo.mvpview.BookContainerView
 
 
 /**

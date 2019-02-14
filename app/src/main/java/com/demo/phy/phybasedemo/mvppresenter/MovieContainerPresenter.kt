@@ -1,8 +1,8 @@
-package com.demo.phy.phybasedemo.mvp_presenter
+package com.demo.phy.phybasedemo.mvppresenter
 
 import com.demo.phy.phybasedemo.base.BasePresenter
-import com.demo.phy.phybasedemo.mvp_model.MovieModel
-import com.demo.phy.phybasedemo.mvp_view.MovieContainerView
+import com.demo.phy.phybasedemo.mvpmodel.MovieModel
+import com.demo.phy.phybasedemo.mvpview.MovieContainerView
 
 /**
  * Created by 82353 on 2018/5/2.

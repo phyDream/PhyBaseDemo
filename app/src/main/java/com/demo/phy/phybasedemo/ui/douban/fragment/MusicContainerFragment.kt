@@ -4,8 +4,8 @@ import android.content.Context
 import android.view.View
 import com.demo.phy.phybasedemo.R
 import com.demo.phy.phybasedemo.base.BaseFragment
-import com.demo.phy.phybasedemo.mvp_presenter.MusicContainerPresenter
-import com.demo.phy.phybasedemo.mvp_view.MusicContainerView
+import com.demo.phy.phybasedemo.mvppresenter.MusicContainerPresenter
+import com.demo.phy.phybasedemo.mvpview.MusicContainerView
 
 /**
  * Created by 82353 on 2018/5/2.

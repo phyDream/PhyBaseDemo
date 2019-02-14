@@ -1,4 +1,4 @@
-package com.demo.phy.phybasedemo.mvp_model
+package com.demo.phy.phybasedemo.mvpmodel
 
 import com.demo.phy.phybasedemo.data.bean.MovieDoubanResponseBean
 import com.demo.phy.phybasedemo.data.network.managers.DoubanNetworkManager

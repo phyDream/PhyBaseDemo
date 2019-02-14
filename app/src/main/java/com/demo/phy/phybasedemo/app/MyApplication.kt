@@ -5,14 +5,16 @@ import android.app.ActivityManager
 import android.app.Application
 import android.content.Context
 import android.os.Process
+import com.tencent.mm.opensdk.openapi.IWXAPI
+import com.tencent.mm.opensdk.openapi.WXAPIFactory
 import me.yokeyword.fragmentation.BuildConfig
-import java.util.*
 import me.yokeyword.fragmentation.Fragmentation
 import me.yokeyword.fragmentation.helper.ExceptionHandler
+import java.util.*
 
 
 /**
- * Created by 82353 on 2018/4/26.
+ * Created by phy on 2018/4/26.
  * 全局MyApplication
  * 1、app引用
  * 2、activity管理
@@ -147,5 +149,14 @@ class MyApplication:Application(){
                     }
                 })
                 .install()
+    }
+
+    var mWxApi: IWXAPI? = null
+    val WEIXIN_APP_ID = "0"
+    private fun registerToWX() {
+        //第二个参数是指你应用在微信开放平台上的AppID
+        mWxApi = WXAPIFactory.createWXAPI(this, WEIXIN_APP_ID, false);
+        // 将该app注册到微信
+        mWxApi?.registerApp(WEIXIN_APP_ID);
     }
 }

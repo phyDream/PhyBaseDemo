@@ -1,11 +1,14 @@
 package com.demo.phy.phybasedemo.ui.douban.activity
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.support.v4.view.ViewPager
 import android.widget.RadioButton
 import com.demo.phy.phybasedemo.R
 import com.demo.phy.phybasedemo.base.BaseActivity
-import com.demo.phy.phybasedemo.mvp_presenter.MvpPresenter
-import com.demo.phy.phybasedemo.mvp_view.MainView
+import com.demo.phy.phybasedemo.mvppresenter.MvpPresenter
+import com.demo.phy.phybasedemo.mvpview.MvpDemoMainView
 import com.demo.phy.phybasedemo.ui.douban.adapter.MainViewPagerAdapter
 import com.demo.phy.phybasedemo.ui.douban.fragment.BookContainerFragment
 import com.demo.phy.phybasedemo.ui.douban.fragment.MovieContainerFragment
@@ -21,12 +24,19 @@ import kotlinx.android.synthetic.main.activity_mvp_main.*
 import me.yokeyword.fragmentation.SupportFragment
 import java.util.concurrent.TimeUnit
 
-class MvpDemoMainActivity:BaseActivity<MainView, MvpPresenter>(),MainView , ViewPager.OnPageChangeListener{
+class MvpDemoMainActivity:BaseActivity<MvpDemoMainView, MvpPresenter>(), MvpDemoMainView, ViewPager.OnPageChangeListener{
 
     private var tabs = arrayListOf<RadioButton>();
     private var currIndex = 1//当前位置
     private val mFragments = arrayListOf<SupportFragment>()
     private var disposable : Disposable? = null
+
+    companion object {
+        fun start(context: Context){
+            var intent = Intent(context,MvpDemoMainActivity::class.java)
+            context.startActivity(intent)
+        }
+    }
 
     override fun getLayoutId(): Int {
         return R.layout.activity_mvp_main
@@ -54,17 +64,8 @@ class MvpDemoMainActivity:BaseActivity<MainView, MvpPresenter>(),MainView , View
 
     }
 
-    override fun initData() {
-        disposable = Observable.timer(5,TimeUnit.SECONDS)
-                .subscribeOn(Schedulers.newThread())
-                .compose(this.bindUntilEvent(com.trello.rxlifecycle2.android.ActivityEvent.DESTROY))
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe{
-                }
-    }
-
-    override fun setLinstener() {
-
+    @SuppressLint("CheckResult")
+    override fun initListener() {
         RxView.clicks(goToMusic)
                 .throttleFirst(1, TimeUnit.SECONDS)
                 .compose(this.bindUntilEvent(com.trello.rxlifecycle2.android.ActivityEvent.DESTROY))//绑定生命周期的方式，来解决内存泄漏的问题。
@@ -88,6 +89,15 @@ class MvpDemoMainActivity:BaseActivity<MainView, MvpPresenter>(),MainView , View
         for (i in 1..100){
             list.add(i)
         }
+    }
+
+    override fun initData() {
+        disposable = Observable.timer(5,TimeUnit.SECONDS)
+                .subscribeOn(Schedulers.newThread())
+                .compose(this.bindUntilEvent(com.trello.rxlifecycle2.android.ActivityEvent.DESTROY))
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe{
+                }
     }
 
     override fun onPageScrollStateChanged(state: Int) {

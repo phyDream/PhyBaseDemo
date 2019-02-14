@@ -7,8 +7,8 @@ import android.view.GestureDetector
 import android.view.View
 import com.demo.phy.phybasedemo.R
 import com.demo.phy.phybasedemo.base.BaseFragment
-import com.demo.phy.phybasedemo.mvp_presenter.MovieContainerPresenter
-import com.demo.phy.phybasedemo.mvp_view.MovieContainerView
+import com.demo.phy.phybasedemo.mvppresenter.MovieContainerPresenter
+import com.demo.phy.phybasedemo.mvpview.MovieContainerView
 import com.demo.phy.phybasedemo.ui.douban.adapter.CommonPagerAdapter
 import com.demo.phy.phybasedemo.utils.Constant
 import kotlinx.android.synthetic.main.fragment_movie_container.*

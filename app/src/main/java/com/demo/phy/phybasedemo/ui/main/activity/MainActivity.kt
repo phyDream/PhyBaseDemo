@@ -1,13 +1,16 @@
 package com.demo.phy.phybasedemo.ui.main.activity
 
 import android.support.v7.widget.LinearLayoutManager
-import com.chad.library.adapter.base.BaseQuickAdapter
 import com.demo.phy.phybasedemo.R
 import com.demo.phy.phybasedemo.base.BaseActivity
 import com.demo.phy.phybasedemo.data.bean.MainListBean
-import com.demo.phy.phybasedemo.mvp_presenter.MainPresenter
-import com.demo.phy.phybasedemo.mvp_view.MainView
+import com.demo.phy.phybasedemo.mvppresenter.MainPresenter
+import com.demo.phy.phybasedemo.mvpview.MainView
+import com.demo.phy.phybasedemo.ui.dialog.activity.DialogActivity
+import com.demo.phy.phybasedemo.ui.douban.activity.MvpDemoMainActivity
 import com.demo.phy.phybasedemo.ui.main.adapter.MainListAdapter
+import com.demo.phy.phybasedemo.utils.Constant
+import com.demo.phy.phybasedemo.widget.recycler.LoadMoreScrollListener
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.top_bar_layout.*
 
@@ -20,7 +23,8 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView{
     //region 变量
     private var mAdapter: MainListAdapter? = null
     private var mData = ArrayList<MainListBean>()
-    private var mPageCount:Int = 1
+    private var mPage:Int = 1
+    private val PAGE_COUNT:Int = 10
     //endregion
 
     override fun getLayoutId(): Int {
@@ -34,9 +38,11 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView{
     override fun initView() {
         center_title.text = getString(R.string.app_name)
 
-        mAdapter = MainListAdapter(R.layout.item_base,this,mData)
+        mAdapter = MainListAdapter(mData)
         mRecyclerView.layoutManager = LinearLayoutManager(this)
+        mRecyclerView.setOnScrollListener(LoadMoreScrollListener(mRecyclerView))
         mRecyclerView.adapter = mAdapter
+
     }
 
     override fun initData() {
@@ -44,20 +50,33 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView{
     }
 
     fun loadData(){
+        pPresenter.getData(mPage)
+    }
+
+    override fun complete(list: List<MainListBean>) {
+        mData.addAll(list)
+        mAdapter?.notifyDataSetChanged()
 
     }
 
-    override fun setLinstener() {
-        mAdapter?.setOnLoadMoreListener(object : BaseQuickAdapter.RequestLoadMoreListener{
-            override fun onLoadMoreRequested() {
-                mPageCount++
+    override fun initListener() {
+        mAdapter?.setLoadMoreListener(object : MainListAdapter.LoadMoreListener{
+            override fun loadMoreData() {
                 loadData()
             }
 
-        })
+        },PAGE_COUNT)
 
-        mAdapter?.setOnItemClickListener { adapter, view, position ->
+        mAdapter?.setOnItemClickListener { item, position ->
 
+            when(item.tag){
+                Constant.TAG_MVP ->{
+                    MvpDemoMainActivity.start(this@MainActivity)
+                }
+                Constant.TAG_DIALOG ->{
+                    DialogActivity.start(this@MainActivity)
+                }
+            }
         }
     }
 

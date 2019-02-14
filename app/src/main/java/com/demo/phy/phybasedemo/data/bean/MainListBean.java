@@ -16,7 +16,18 @@ public class MainListBean {
     /**
      * item代号 - 用于处理点击事件
      */
-    private int id;
+    private int tag;
+
+    /**
+     * item描述
+     */
+    private int description;
+
+    public MainListBean(String name, String createTime, int tag, String description) {
+        this.name = name;
+        this.createTime = createTime;
+        this.tag = tag;
+    }
 
     public String getName() {
         return name;
@@ -34,11 +45,19 @@ public class MainListBean {
         this.createTime = createTime;
     }
 
-    public int getId() {
-        return id;
+    public int getTag() {
+        return tag;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setTag(int tag) {
+        this.tag = tag;
+    }
+
+    public int getDescription() {
+        return description;
+    }
+
+    public void setDescription(int description) {
+        this.description = description;
     }
 }

@@ -1,6 +1,5 @@
 package com.demo.phy.phybasedemo.base
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.annotation.CallSuper
 import android.support.annotation.CheckResult
@@ -33,8 +32,9 @@ open abstract class BaseActivity<V:BaseView,T:BasePresenter<V>>: SupportActivity
         StatusBarUtil.setColor(this, resources.getColor(R.color.bg_top_bar), 0)
         pPresenter = get_Presenter();
         initView()
+        initListener()
         initData()
-        setLinstener();
+
     }
 
     private val lifecycleSubject = BehaviorSubject.create<ActivityEvent>()
@@ -90,48 +90,6 @@ open abstract class BaseActivity<V:BaseView,T:BasePresenter<V>>: SupportActivity
 
 
     /**
-     * [页面跳转]
-     *
-     * @param clz
-     */
-    fun startActivity(clz: Class<*>) {
-        startActivity(Intent(this@BaseActivity, clz))
-    }
-
-    /**
-     * [携带数据的页面跳转]
-     *
-     * @param clz
-     * @param bundle
-     */
-    fun startActivity(clz: Class<*>, bundle: Bundle?) {
-        val intent = Intent()
-        intent.setClass(this, clz)
-        if (bundle != null) {
-            intent.putExtras(bundle)
-        }
-        startActivity(intent)
-    }
-
-    /**
-     * [含有Bundle通过Class打开编辑界面]
-     *
-     * @param cls
-     * @param bundle
-     * @param requestCode
-     */
-    fun startActivityForResult(cls: Class<*>, bundle: Bundle?,
-                               requestCode: Int) {
-        val intent = Intent()
-        intent.setClass(this, cls)
-        if (bundle != null) {
-            intent.putExtras(bundle)
-        }
-        startActivityForResult(intent, requestCode)
-    }
-
-
-    /**
      * [得到布局ID]
      */
 
@@ -156,5 +114,5 @@ open abstract class BaseActivity<V:BaseView,T:BasePresenter<V>>: SupportActivity
     /**
      * [设置监听]
      */
-    protected abstract fun setLinstener();
+    protected abstract fun initListener();
 }

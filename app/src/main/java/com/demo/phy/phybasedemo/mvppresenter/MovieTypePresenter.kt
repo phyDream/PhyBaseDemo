@@ -1,9 +1,9 @@
-package com.demo.phy.phybasedemo.mvp_presenter
+package com.demo.phy.phybasedemo.mvppresenter
 
 import com.demo.phy.phybasedemo.base.BasePresenter
 import com.demo.phy.phybasedemo.data.bean.MovieDoubanResponseBean
-import com.demo.phy.phybasedemo.mvp_model.MovieModel
-import com.demo.phy.phybasedemo.mvp_view.MovieTypeView
+import com.demo.phy.phybasedemo.mvpmodel.MovieModel
+import com.demo.phy.phybasedemo.mvpview.MovieTypeView
 import io.reactivex.Observable
 import io.reactivex.ObservableSource
 import io.reactivex.Observer
