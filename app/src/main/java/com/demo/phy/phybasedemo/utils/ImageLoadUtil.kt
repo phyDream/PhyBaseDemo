@@ -14,7 +14,7 @@ import com.bumptech.glide.request.RequestOptions
 object ImageLoadUtil{
     fun loadByUrl(context: Context, imageView: ImageView?, url: String){
         val options = RequestOptions()
-                .placeholder(R.drawable.loading)
+                .placeholder(R.drawable.ic_defult)
                 .error(R.drawable.load_failed)
                 .centerCrop()
         Glide.with(context).load(url)

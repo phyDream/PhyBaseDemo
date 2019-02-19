@@ -27,7 +27,7 @@ class MainModel private constructor() {
             var list = ArrayList<MainListBean>()
             if(page == 1){
                 list.add(MainListBean("MVP + Rxjava + retrofit2","2019-1-4",Constant.TAG_MVP,null))
-                list.add(MainListBean("Dialog","2019-1-30",Constant.TAG_DIALOG,null))
+                list.add(MainListBean("弹框","2019-1-30",Constant.TAG_DIALOG,null))
             }
             it.onNext(list)
             it.onComplete()

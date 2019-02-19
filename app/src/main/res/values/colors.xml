@@ -53,5 +53,6 @@
 
     <color name="menu_bg">#49484b</color>
     <color name="menu_bg_press">#3A393C</color>
+    <color name="tr_black_color">#77616060</color>
 
 </resources>

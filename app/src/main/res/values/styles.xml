@@ -49,12 +49,26 @@
         <item name="android:windowCloseOnTouchOutside">false</item>
     </style>
 
+    <style name="mypopwindow_anim_style">
+        <item name="android:windowEnterAnimation">@anim/popshow_anim</item>
+        <!-- 指定显示的动画xml -->
+
+        <item name="android:windowExitAnimation">@anim/pophidden_anim</item>
+        <!-- 指定消失的动画xml -->
+    </style>
 
     <style name="line_horizontal">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">2px</item>
         <item name="android:background">#EBEBEB</item>
         <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <style name="popwindow_bottom_anim_style">
+        <item name="android:windowEnterAnimation">@anim/pop_bottom_in</item>
+        <!-- 指定显示时的动画xml -->
+        <item name="android:windowExitAnimation">@anim/pop_bottom_out</item>
+        <!-- 指定消失时的动画xml -->
     </style>
 
 </resources>

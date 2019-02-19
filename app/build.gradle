@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.example.a82353.kotlindemo"
+        applicationId "com.demo.phy.phybasedemo"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1

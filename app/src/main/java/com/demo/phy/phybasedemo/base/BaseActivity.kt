@@ -1,8 +1,12 @@
 package com.demo.phy.phybasedemo.base
 
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.support.annotation.CallSuper
 import android.support.annotation.CheckResult
+import android.view.KeyEvent
 import com.demo.phy.phybasedemo.R
 import com.demo.phy.phybasedemo.app.MyApplication
 import com.demo.phy.phybasedemo.utils.StatusBarUtil
@@ -115,4 +119,33 @@ open abstract class BaseActivity<V:BaseView,T:BasePresenter<V>>: SupportActivity
      * [设置监听]
      */
     protected abstract fun initListener();
+
+    private var alertDialog: AlertDialog? = null
+
+    fun showLoadingDialog() {
+        showLoadingDialog(true, false, false)
+    }
+
+    fun showLoadingDialog(cancelable: Boolean, canNotback: Boolean, canceledOnTouchOutside: Boolean) {
+        if (alertDialog == null) {
+            alertDialog = AlertDialog.Builder(this).create()
+            alertDialog!!.window!!.setBackgroundDrawable(ColorDrawable())
+            alertDialog!!.setCancelable(cancelable)
+            alertDialog!!.setCanceledOnTouchOutside(false)
+            alertDialog!!.setOnKeyListener { dialog, keyCode, event -> if (keyCode == KeyEvent.KEYCODE_SEARCH || keyCode == KeyEvent.KEYCODE_BACK) canNotback else false }
+            alertDialog!!.setCanceledOnTouchOutside(canceledOnTouchOutside)
+        }
+        alertDialog!!.show()
+        alertDialog!!.setContentView(R.layout.loading_alert)
+    }
+
+    fun dismissLoadingDialog() {
+
+        runOnUiThread {
+            if (null != alertDialog && alertDialog!!.isShowing) {
+                alertDialog!!.dismiss()
+            }
+        }
+
+    }
 }
