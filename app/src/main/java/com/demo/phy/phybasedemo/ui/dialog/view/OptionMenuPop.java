@@ -20,11 +20,9 @@ public class OptionMenuPop extends BasePopWindow {
 
     @Override
     public void initOtherView() {
-
         tv_test1 = popupView.findViewById(R.id.tv_test1);
         tv_test2 = popupView.findViewById(R.id.tv_test2);
         tv_test3 = popupView.findViewById(R.id.tv_test3);
-
     }
 
     public void show(View v) {
