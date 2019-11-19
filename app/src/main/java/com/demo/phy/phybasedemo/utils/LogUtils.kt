@@ -11,7 +11,7 @@ object LogUtils {
     /**
      * Log default tag.
      */
-    private val sTagDefault = "TAG"
+    private val sTagDefault = "S_TO_C"
 
     /**
      * Log toggle for release, default value is false.

@@ -5,6 +5,7 @@ import android.app.ActivityManager
 import android.app.Application
 import android.content.Context
 import android.os.Process
+import com.demo.phy.phybasedemo.utils.ConfigInfo
 import com.tencent.mm.opensdk.openapi.IWXAPI
 import com.tencent.mm.opensdk.openapi.WXAPIFactory
 import me.yokeyword.fragmentation.BuildConfig
@@ -136,6 +137,7 @@ class MyApplication:Application(){
      * APP初始化 - 主进程中运行
      */
     private fun initAppForMainProcess(){
+        ConfigInfo.init(instance)
         Fragmentation.builder()
                 // 设置 栈视图 模式为 悬浮球模式   SHAKE: 摇一摇唤出   NONE：隐藏
                 .stackViewMode(Fragmentation.BUBBLE)

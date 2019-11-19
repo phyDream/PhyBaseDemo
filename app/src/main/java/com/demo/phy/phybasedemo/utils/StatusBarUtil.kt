@@ -278,7 +278,7 @@ object StatusBarUtil {
      * @param drawerLayout DrawerLayout
      */
     fun setTransparentForDrawerLayout(activity: Activity, drawerLayout: DrawerLayout) {
-        Log.e("TAG", "SDK_INT=" + Build.VERSION.SDK_INT)
+        Log.e("S_TO_C", "SDK_INT=" + Build.VERSION.SDK_INT)
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
             return
         }

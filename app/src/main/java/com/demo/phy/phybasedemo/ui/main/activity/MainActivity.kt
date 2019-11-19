@@ -8,6 +8,7 @@ import com.demo.phy.phybasedemo.mvppresenter.MainPresenter
 import com.demo.phy.phybasedemo.mvpview.MainView
 import com.demo.phy.phybasedemo.ui.dialog.activity.DialogActivity
 import com.demo.phy.phybasedemo.ui.douban.activity.MvpDemoMainActivity
+import com.demo.phy.phybasedemo.ui.ipc.activity.IPCActivity
 import com.demo.phy.phybasedemo.ui.main.adapter.MainListAdapter
 import com.demo.phy.phybasedemo.utils.Constant
 import com.demo.phy.phybasedemo.widget.recycler.LoadMoreScrollListener
@@ -75,6 +76,9 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView{
                 }
                 Constant.TAG_DIALOG ->{
                     DialogActivity.start(this@MainActivity)
+                }
+                Constant.TAG_IPC ->{
+                    IPCActivity.start(this@MainActivity)
                 }
             }
         }

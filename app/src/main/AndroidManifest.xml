@@ -30,7 +30,29 @@
         <activity android:name="com.demo.phy.phybasedemo.ui.douban.activity.MvpDemoMainActivity" android:theme="@style/Theme.Design.Light.NoActionBar"></activity>
         <activity android:name="com.demo.phy.phybasedemo.ui.douban.activity.MovieDetailActivity"></activity>
         <activity android:name="com.demo.phy.phybasedemo.ui.dialog.activity.DialogActivity"></activity>
+        <activity android:name="com.demo.phy.phybasedemo.ui.ipc.activity.IPCActivity"></activity>
 
+        <service
+            android:name="com.demo.phy.phybasedemo.service.MessagerService"
+            android:isolatedProcess="false"
+            android:process=":messager"
+            android:singleUser="true">
+            <intent-filter android:priority="1000">
+                <!-- AIDL完整路径名。必须指明，客户端能够通过AIDL类名查找到它的实现类 -->
+                <action android:name="com.demo.phy.phybasedemo.service.MessagerService" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.demo.phy.phybasedemo.service.AIDLService"
+            android:isolatedProcess="false"
+            android:process=":aild"
+            android:singleUser="true">
+            <intent-filter android:priority="1000">
+                <!-- AIDL完整路径名。必须指明，客户端能够通过AIDL类名查找到它的实现类 -->
+                <action android:name="com.demo.phy.phybasedemo.service.AIDLService" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

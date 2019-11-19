@@ -73,5 +73,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
     //微信登录
     implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+    //进程间数据共享
+    implementation 'net.grandcentrix.tray:tray:0.12.0'
 
 }

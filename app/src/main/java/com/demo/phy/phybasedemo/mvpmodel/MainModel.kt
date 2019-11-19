@@ -28,6 +28,7 @@ class MainModel private constructor() {
             if(page == 1){
                 list.add(MainListBean("MVP + Rxjava + retrofit2","2019-1-4",Constant.TAG_MVP,null))
                 list.add(MainListBean("弹框","2019-1-30",Constant.TAG_DIALOG,null))
+                list.add(MainListBean("进程间通信","2019-11-15",Constant.TAG_IPC,null))
             }
             it.onNext(list)
             it.onComplete()

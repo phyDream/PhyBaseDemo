@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:padding="8dp"
+            android:text="开启服务进程"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_messenger"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:padding="8dp"
+            android:gravity="center_vertical"
+            android:text="1.使用Messenger"/>
+
+        <TextView
+            android:id="@+id/tv_messenger"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="接收来自其他进程的消息"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_aidl"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:text="2.使用aidl"/>
+
+        <TextView
+            android:id="@+id/tv_aidl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="接收来自其他进程的消息"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_tray"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:text="3.使用tray，数据共享"/>
+
+        <TextView
+            android:id="@+id/tv_tray"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="共享数据"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_stop"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:padding="8dp"
+            android:text="结束服务进程"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>
