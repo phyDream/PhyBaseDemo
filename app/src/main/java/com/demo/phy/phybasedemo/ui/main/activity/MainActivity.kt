@@ -8,9 +8,11 @@ import com.demo.phy.phybasedemo.mvppresenter.MainPresenter
 import com.demo.phy.phybasedemo.mvpview.MainView
 import com.demo.phy.phybasedemo.ui.dialog.activity.DialogActivity
 import com.demo.phy.phybasedemo.ui.douban.activity.MvpDemoMainActivity
+import com.demo.phy.phybasedemo.ui.fragment.activity.TabsActivity
 import com.demo.phy.phybasedemo.ui.ipc.activity.IPCActivity
 import com.demo.phy.phybasedemo.ui.main.adapter.MainListAdapter
 import com.demo.phy.phybasedemo.utils.Constant
+import com.demo.phy.phybasedemo.utils.StatusBarUtil
 import com.demo.phy.phybasedemo.widget.recycler.LoadMoreScrollListener
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.top_bar_layout.*
@@ -38,7 +40,7 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView{
 
     override fun initView() {
         center_title.text = getString(R.string.app_name)
-
+        StatusBarUtil.setStatusBarColorAndFontColor(this, R.color.bg_top_bar)
         mAdapter = MainListAdapter(mData)
         mRecyclerView.layoutManager = LinearLayoutManager(this)
         mRecyclerView.setOnScrollListener(LoadMoreScrollListener(mRecyclerView))
@@ -53,6 +55,11 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView{
     fun loadData(){
         pPresenter.getData(mPage)
     }
+
+    override fun getNaColor():Int{
+        return R.color.bg_top_bar
+    }
+
 
     override fun complete(list: List<MainListBean>) {
         mData.addAll(list)
@@ -79,6 +86,9 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView{
                 }
                 Constant.TAG_IPC ->{
                     IPCActivity.start(this@MainActivity)
+                }
+                Constant.TAG_FRAGMENT ->{
+                    TabsActivity.start(this@MainActivity)
                 }
             }
         }

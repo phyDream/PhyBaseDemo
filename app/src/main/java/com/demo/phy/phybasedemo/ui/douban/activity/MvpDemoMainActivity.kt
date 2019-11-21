@@ -47,7 +47,7 @@ class MvpDemoMainActivity:BaseActivity<MvpDemoMainView, MvpPresenter>(), MvpDemo
     }
 
     override fun initView() {
-        StatusBarUtil.setColor(this, resources.getColor(R.color.titleBarColor), 0)
+        StatusBarUtil.setStatusBarColorAndFontColor(this, R.color.bg_top_bar)
         //获得顶部栏
         tabs.add(goToMusic)
         tabs.add(goToMovie)
@@ -62,6 +62,10 @@ class MvpDemoMainActivity:BaseActivity<MvpDemoMainView, MvpPresenter>(), MvpDemo
         mainContentViewPager?.addOnPageChangeListener(this)
         mainContentViewPager.setCurrentItem(Constant.MOVIE)//默认显示电影
 
+    }
+
+    override fun getNaColor():Int{
+        return R.color.bg_top_bar
     }
 
     @SuppressLint("CheckResult")

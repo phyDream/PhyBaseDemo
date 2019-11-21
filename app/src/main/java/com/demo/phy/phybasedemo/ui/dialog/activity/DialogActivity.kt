@@ -13,6 +13,7 @@ import com.demo.phy.phybasedemo.ui.dialog.adapter.DialogTypeAdapter
 import com.demo.phy.phybasedemo.ui.dialog.view.BottomPop
 import com.demo.phy.phybasedemo.ui.dialog.view.NormalTipDialog
 import com.demo.phy.phybasedemo.ui.dialog.view.OptionMenuPop
+import com.demo.phy.phybasedemo.utils.StatusBarUtil
 import com.demo.phy.phybasedemo.utils.ToastUtils
 import kotlinx.android.synthetic.main.activity_dialog.*
 import kotlinx.android.synthetic.main.top_bar_layout.*
@@ -41,6 +42,10 @@ class DialogActivity : BaseActivity<DialogView, DialogPresenter>(), DialogView {
 
     }
 
+    override fun getNaColor():Int{
+        return R.color.bg_top_bar
+    }
+
     lateinit var mOptionMenuPop : OptionMenuPop
     lateinit var mBottomPop : BottomPop
     lateinit var mNormalTipDialog : NormalTipDialog
@@ -48,6 +53,7 @@ class DialogActivity : BaseActivity<DialogView, DialogPresenter>(), DialogView {
     var data  = ArrayList<PopTypeBean>()
 
     override fun initView() {
+        StatusBarUtil.setStatusBarColorAndFontColor(this, R.color.bg_top_bar)
         left_back.visibility = View.VISIBLE
         center_title.visibility = View.VISIBLE
         center_title.text = "弹框"

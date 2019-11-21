@@ -26,6 +26,7 @@ object Constant{
     const val TAG_MVP = 1
     const val TAG_DIALOG = 2
     const val TAG_IPC = 3
+    const val TAG_FRAGMENT = 4
     //endregion
 
     //region tray

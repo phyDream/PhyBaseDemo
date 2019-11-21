@@ -1,12 +1,16 @@
 package com.demo.phy.phybasedemo.base
 
 import android.app.AlertDialog
-import android.content.DialogInterface
+import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import android.os.Bundle
 import android.support.annotation.CallSuper
 import android.support.annotation.CheckResult
+import android.support.v4.graphics.ColorUtils
 import android.view.KeyEvent
+import android.view.View
+import android.view.WindowManager
 import com.demo.phy.phybasedemo.R
 import com.demo.phy.phybasedemo.app.MyApplication
 import com.demo.phy.phybasedemo.utils.StatusBarUtil
@@ -27,18 +31,70 @@ import me.yokeyword.fragmentation.SupportActivity
 open abstract class BaseActivity<V:BaseView,T:BasePresenter<V>>: SupportActivity(),LifecycleProvider<ActivityEvent>{
 
     lateinit var pPresenter: T
+
     @CallSuper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         lifecycleSubject.onNext(ActivityEvent.CREATE)
         MyApplication.mActivities.add(this)//存放所有activity的引用
         setContentView(getLayoutId())
-        StatusBarUtil.setColor(this, resources.getColor(R.color.bg_top_bar), 0)
+        initStatusBar()
         pPresenter = get_Presenter();
         initView()
         initListener()
         initData()
 
+    }
+
+    private fun initStatusBar() {
+        //白状态栏、黑字
+//        if (true) {
+//            StatusBarUtil.WhiteStatusBarAndBlackFont(this)
+//            return
+//        }
+        if (isImageTheme()) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                val window = window
+                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS or WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
+                window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+                window.statusBarColor = Color.TRANSPARENT
+                // window.setNavigationBarColor(Color.TRANSPARENT);
+            }
+        } else {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                val window = window
+                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS or WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+                window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                window.statusBarColor = getNaColor()
+                // window.setNavigationBarColor(Color.TRANSPARENT);
+            }
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (isLightColor(getNaColor())) {
+                window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+            } else {
+                window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
+            }
+        }
+    }
+
+    open fun isImageTheme(): Boolean {
+        return false
+    }
+
+    open fun getNaColor(): Int {
+        return resources.getColor(R.color.title_bg)
+    }
+
+    /**
+     * 判断颜色是不是亮色
+     *
+     * @from https://stackoverflow.com/questions/24260853/check-if-color-is-dark-or-light-in-android
+     */
+    protected fun isLightColor(color: Int): Boolean {
+        return ColorUtils.calculateLuminance(color) >= 0.5
     }
 
     private val lifecycleSubject = BehaviorSubject.create<ActivityEvent>()

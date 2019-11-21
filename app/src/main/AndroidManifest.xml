@@ -31,6 +31,7 @@
         <activity android:name="com.demo.phy.phybasedemo.ui.douban.activity.MovieDetailActivity"></activity>
         <activity android:name="com.demo.phy.phybasedemo.ui.dialog.activity.DialogActivity"></activity>
         <activity android:name="com.demo.phy.phybasedemo.ui.ipc.activity.IPCActivity"></activity>
+        <activity android:name="com.demo.phy.phybasedemo.ui.fragment.activity.TabsActivity"></activity>
 
         <service
             android:name="com.demo.phy.phybasedemo.service.MessagerService"
