@@ -71,4 +71,9 @@
         <!-- 指定消失时的动画xml -->
     </style>
 
+    <!--TabLayout样式-->
+    <style name="TabLayoutTextStyle_FileTypes">
+        <item name="android:textSize">@dimen/title_fileType</item>
+    </style>
+
 </resources>

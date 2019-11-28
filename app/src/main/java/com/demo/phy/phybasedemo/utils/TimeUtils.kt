@@ -10,6 +10,7 @@ import java.util.*
  * Created by 82353 on 2018/5/2.
  */
 object TimeUtils {
+
     //毫秒级
     fun getCurrentTimeMillis(): String {
         return System.currentTimeMillis().toString() + ""

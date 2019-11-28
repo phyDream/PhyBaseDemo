@@ -33,4 +33,6 @@
 
     <dimen name="title_bar_height">44dp</dimen>
     <dimen name="main_title_size">18sp</dimen>
+    <dimen name="title_fileType">14sp</dimen>
+
 </resources>

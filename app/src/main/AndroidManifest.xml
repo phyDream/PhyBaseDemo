@@ -32,6 +32,9 @@
         <activity android:name="com.demo.phy.phybasedemo.ui.dialog.activity.DialogActivity"></activity>
         <activity android:name="com.demo.phy.phybasedemo.ui.ipc.activity.IPCActivity"></activity>
         <activity android:name="com.demo.phy.phybasedemo.ui.fragment.activity.TabsActivity"></activity>
+        <activity android:name="com.demo.phy.phybasedemo.ui.notifiction.activity.NotifictionActivity"></activity>
+        <activity android:name="com.demo.phy.phybasedemo.ui.files.activity.FileActivity"></activity>
+        <activity android:name="com.demo.phy.phybasedemo.ui.files.activity.FileClassifySelectActivity"></activity>
 
         <service
             android:name="com.demo.phy.phybasedemo.service.MessagerService"

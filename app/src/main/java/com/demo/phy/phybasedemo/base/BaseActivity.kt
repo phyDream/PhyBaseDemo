@@ -21,6 +21,7 @@ import com.trello.rxlifecycle2.android.ActivityEvent
 import com.trello.rxlifecycle2.android.RxLifecycleAndroid
 import io.reactivex.Observable
 import io.reactivex.subjects.BehaviorSubject
+import kotlinx.android.synthetic.main.top_bar_layout.*
 import me.yokeyword.fragmentation.SupportActivity
 
 /**
@@ -31,15 +32,18 @@ import me.yokeyword.fragmentation.SupportActivity
 open abstract class BaseActivity<V:BaseView,T:BasePresenter<V>>: SupportActivity(),LifecycleProvider<ActivityEvent>{
 
     lateinit var pPresenter: T
+    lateinit var bActivity: BaseActivity<V,T>
 
     @CallSuper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        bActivity = this
         lifecycleSubject.onNext(ActivityEvent.CREATE)
         MyApplication.mActivities.add(this)//存放所有activity的引用
         setContentView(getLayoutId())
         initStatusBar()
-        pPresenter = get_Presenter();
+        pPresenter = get_Presenter()
+        initBack()
         initView()
         initListener()
         initData()
@@ -85,7 +89,15 @@ open abstract class BaseActivity<V:BaseView,T:BasePresenter<V>>: SupportActivity
     }
 
     open fun getNaColor(): Int {
-        return resources.getColor(R.color.title_bg)
+        return resources.getColor(R.color.bg_top_bar)
+    }
+
+    protected fun initBack() {
+        if (null != left_back) {
+            left_back!!.setOnClickListener(View.OnClickListener {
+                onBackPressed()
+            })
+        }
     }
 
     /**

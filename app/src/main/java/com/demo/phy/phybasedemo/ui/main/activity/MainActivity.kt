@@ -8,9 +8,11 @@ import com.demo.phy.phybasedemo.mvppresenter.MainPresenter
 import com.demo.phy.phybasedemo.mvpview.MainView
 import com.demo.phy.phybasedemo.ui.dialog.activity.DialogActivity
 import com.demo.phy.phybasedemo.ui.douban.activity.MvpDemoMainActivity
+import com.demo.phy.phybasedemo.ui.files.activity.FileActivity
 import com.demo.phy.phybasedemo.ui.fragment.activity.TabsActivity
 import com.demo.phy.phybasedemo.ui.ipc.activity.IPCActivity
 import com.demo.phy.phybasedemo.ui.main.adapter.MainListAdapter
+import com.demo.phy.phybasedemo.ui.notifiction.activity.NotifictionActivity
 import com.demo.phy.phybasedemo.utils.Constant
 import com.demo.phy.phybasedemo.utils.StatusBarUtil
 import com.demo.phy.phybasedemo.widget.recycler.LoadMoreScrollListener
@@ -89,6 +91,12 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView{
                 }
                 Constant.TAG_FRAGMENT ->{
                     TabsActivity.start(this@MainActivity)
+                }
+                Constant.TAG_NOTIFICATION ->{
+                    NotifictionActivity.start(this@MainActivity)
+                }
+                Constant.TAG_FILE ->{
+                    FileActivity.start(this@MainActivity)
                 }
             }
         }
