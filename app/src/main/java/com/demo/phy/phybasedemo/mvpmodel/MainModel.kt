@@ -32,6 +32,7 @@ class MainModel private constructor() {
                 list.add(MainListBean("fragment","2019-11-21",Constant.TAG_FRAGMENT,null))
                 list.add(MainListBean("8.0以上通知适配","2019-11-26",Constant.TAG_NOTIFICATION,null))
                 list.add(MainListBean("文件选择器","2019-11-28",Constant.TAG_FILE,null))
+                list.add(MainListBean("热更新","2019-11-29",Constant.TAG_HOT_UPDATE,null))
             }
             it.onNext(list)
             it.onComplete()

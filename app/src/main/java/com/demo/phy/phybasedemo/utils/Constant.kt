@@ -29,6 +29,7 @@ object Constant{
     const val TAG_FRAGMENT = 4
     const val TAG_NOTIFICATION = 5
     const val TAG_FILE = 6
+    const val TAG_HOT_UPDATE = 7
     //endregion
 
     //region tray
