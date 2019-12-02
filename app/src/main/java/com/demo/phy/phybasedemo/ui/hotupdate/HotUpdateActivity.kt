@@ -6,6 +6,7 @@ import com.demo.phy.phybasedemo.R
 import com.demo.phy.phybasedemo.base.BaseActivity
 import com.demo.phy.phybasedemo.mvppresenter.HotUpdatePresenter
 import com.demo.phy.phybasedemo.mvpview.HotUpdateView
+import kotlinx.android.synthetic.main.top_bar_layout.*
 
 /**
  * Created by phy on 2019/11/29
@@ -34,6 +35,7 @@ class HotUpdateActivity : BaseActivity<HotUpdateView, HotUpdatePresenter>(), Hot
     }
 
     override fun initView() {
+        center_title.text = "热更新(待定中)"
     }
 
     override fun initData() {

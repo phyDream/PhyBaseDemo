@@ -10,6 +10,7 @@ import com.demo.phy.phybasedemo.utils.ConfigInfo
 import com.demo.phy.phybasedemo.utils.LogUtils
 import com.demo.phy.phybasedemo.utils.TimeUtils
 import kotlinx.android.synthetic.main.activity_ipc.*
+import kotlinx.android.synthetic.main.top_bar_layout.*
 
 /**
  * Created by phy on 2019/11/15
@@ -53,6 +54,7 @@ class IPCActivity : BaseActivity<IPCView, IPCPresenter>(), IPCView {
     }
 
     override fun initView() {
+        center_title.text = "进程间通信"
     }
 
     override fun initData() {

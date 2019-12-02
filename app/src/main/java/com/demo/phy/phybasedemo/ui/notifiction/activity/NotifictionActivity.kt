@@ -16,6 +16,7 @@ import com.demo.phy.phybasedemo.base.BaseActivity
 import com.demo.phy.phybasedemo.mvppresenter.NotifictionPresenter
 import com.demo.phy.phybasedemo.mvpview.NotifictionView
 import kotlinx.android.synthetic.main.activity_notifiction.*
+import kotlinx.android.synthetic.main.top_bar_layout.*
 
 
 /**
@@ -45,6 +46,7 @@ class NotifictionActivity : BaseActivity<NotifictionView, NotifictionPresenter>(
     }
 
     override fun initView() {
+        center_title.text = "通知"
     }
 
     override fun initData() {

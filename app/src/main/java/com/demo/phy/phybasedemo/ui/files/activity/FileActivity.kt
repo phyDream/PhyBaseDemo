@@ -14,6 +14,7 @@ import com.demo.phy.phybasedemo.utils.LogUtils
 import com.demo.phy.phybasedemo.utils.PermissionUtils
 import com.leon.lfilepickerlibrary.LFilePicker
 import kotlinx.android.synthetic.main.activity_file.*
+import kotlinx.android.synthetic.main.top_bar_layout.*
 
 /**
  * Created by phy on 2019/11/28
@@ -46,6 +47,7 @@ class FileActivity : BaseActivity<FileView, FilePresenter>(), FileView {
     }
 
     override fun initView() {
+        center_title.text = "文件选择器"
     }
 
     override fun initData() {

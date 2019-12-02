@@ -28,8 +28,7 @@
             android:ellipsize="middle"
             android:singleLine="true"
             android:maxEms="12"
-            android:drawableLeft="@drawable/ic_back"
-            android:visibility="gone"/>
+            android:drawableLeft="@drawable/ic_back"/>
 
         <TextView
             android:id="@+id/center_title"
