@@ -5,6 +5,7 @@ import android.app.ActivityManager
 import android.app.Application
 import android.content.Context
 import android.os.Process
+import android.support.multidex.MultiDex
 import com.demo.phy.phybasedemo.utils.ConfigInfo
 import com.tencent.mm.opensdk.openapi.IWXAPI
 import com.tencent.mm.opensdk.openapi.WXAPIFactory
@@ -138,6 +139,8 @@ class MyApplication:Application(){
      */
     private fun initAppForMainProcess(){
         ConfigInfo.init(instance)
+        // 初始化MultiDex
+        MultiDex.install(this);
         Fragmentation.builder()
                 // 设置 栈视图 模式为 悬浮球模式   SHAKE: 摇一摇唤出   NONE：隐藏
                 .stackViewMode(Fragmentation.BUBBLE)

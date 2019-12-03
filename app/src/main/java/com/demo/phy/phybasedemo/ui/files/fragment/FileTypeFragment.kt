@@ -12,10 +12,7 @@ import com.demo.phy.phybasedemo.app.MyApplication
 import com.demo.phy.phybasedemo.data.bean.MyFile
 import com.demo.phy.phybasedemo.ui.files.activity.FileClassifySelectActivity
 import com.demo.phy.phybasedemo.ui.files.adpter.FileListAdapter
-import com.demo.phy.phybasedemo.utils.Constant
-import com.demo.phy.phybasedemo.utils.FileUtils
-import com.demo.phy.phybasedemo.utils.ToastUtils
-import com.demo.phy.phybasedemo.utils.TransformUtil
+import com.demo.phy.phybasedemo.utils.*
 import kotlinx.android.synthetic.main.fragment_file_type.*
 import java.util.*
 
@@ -65,6 +62,8 @@ class FileTypeFragment : Fragment() {
                 } else {
                     filesByPitchOn.add(file)
                 }
+                StringUtil.clipBord(activity, file.filePath)
+                ToastUtils.showToast(this!!.activity!!,file.filePath)
                 adapter?.notifyDataSetChanged()
             }
         })

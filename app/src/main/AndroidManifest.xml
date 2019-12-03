@@ -36,6 +36,7 @@
         <activity android:name="com.demo.phy.phybasedemo.ui.files.activity.FileActivity"></activity>
         <activity android:name="com.demo.phy.phybasedemo.ui.files.activity.FileClassifySelectActivity"></activity>
         <activity android:name="com.demo.phy.phybasedemo.ui.hotupdate.HotUpdateActivity"></activity>
+        <activity android:name="com.demo.phy.phybasedemo.ui.imaging.activity.ImageEditorsActivity"></activity>
 
         <service
             android:name="com.demo.phy.phybasedemo.service.MessagerService"

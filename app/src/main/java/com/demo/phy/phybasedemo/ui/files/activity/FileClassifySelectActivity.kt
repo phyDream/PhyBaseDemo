@@ -114,6 +114,7 @@ class FileClassifySelectActivity : BaseActivity<FileView, FilePresenter>(), File
         fragments.add(getFileFragment(arrayOf( Constant.PPT)))
         fragments.add(getFileFragment(arrayOf(Constant.APK)))
         fragments.add(getFileFragment(arrayOf(Constant.MP3)))
+        fragments.add(getFileFragment(arrayOf(Constant.PNG)))
         fragments.add(getFileFragment(arrayOf(Constant.ZIP,Constant.RAR)))
 
         types.add("word")
@@ -122,6 +123,7 @@ class FileClassifySelectActivity : BaseActivity<FileView, FilePresenter>(), File
         types.add("ppt");
         types.add("应用")
         types.add("mp3")
+        types.add("png")
         types.add("其他")
 
     }

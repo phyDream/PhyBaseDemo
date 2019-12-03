@@ -14,6 +14,8 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+        // 这里添加
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -79,6 +81,10 @@ dependencies {
     implementation 'net.grandcentrix.tray:tray:0.12.0'
     //文件选择器
     implementation 'com.leon:lfilepickerlibrary:1.8.0'
+    //图片编辑
+    implementation project(':image')
+    // 引入multidex库
+    implementation 'com.android.support:multidex:1.0.3'
 //    //热更新
 //    compile "com.android.support:multidex:1.0.1" // 多dex配置
 //    //注释掉原有bugly的仓库
