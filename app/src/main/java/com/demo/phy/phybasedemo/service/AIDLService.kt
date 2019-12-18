@@ -3,7 +3,7 @@ package com.demo.phy.phybasedemo.service
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
-import android.support.annotation.Nullable
+import androidx.annotation.Nullable
 import com.demo.phy.phybasedemo.aidl.binder.BinderBookImpl
 import com.demo.phy.phybasedemo.aidl.binder.BinderPoolImpl
 import com.demo.phy.phybasedemo.utils.ConfigInfo

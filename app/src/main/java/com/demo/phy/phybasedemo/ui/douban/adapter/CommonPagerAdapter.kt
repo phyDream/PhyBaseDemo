@@ -1,8 +1,8 @@
 package com.demo.phy.phybasedemo.ui.douban.adapter
 
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 
 class CommonPagerAdapter(fm: FragmentManager, private val fragments:List<Fragment>, private val tabs:List<String>): FragmentPagerAdapter(fm) {
 

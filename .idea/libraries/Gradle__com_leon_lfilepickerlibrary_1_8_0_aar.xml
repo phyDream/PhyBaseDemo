@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.leon:lfilepickerlibrary:1.8.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/lfilepickerlibrary-1.8.0.aar/2fe095b8d84bae80990762380a2f4f67/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-lfilepickerlibrary-1.8.0.aar/9f61f6ed801e84feaf331b26d760c45b/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/lfilepickerlibrary-1.8.0.aar/2fe095b8d84bae80990762380a2f4f67/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/lfilepickerlibrary-1.8.0.aar/2fe095b8d84bae80990762380a2f4f67/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-lfilepickerlibrary-1.8.0.aar/9f61f6ed801e84feaf331b26d760c45b/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-lfilepickerlibrary-1.8.0.aar/9f61f6ed801e84feaf331b26d760c45b/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

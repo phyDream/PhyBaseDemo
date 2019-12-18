@@ -3,7 +3,7 @@ package com.demo.phy.phybasedemo.ui.douban.activity
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import android.support.v4.view.ViewPager
+import androidx.viewpager.widget.ViewPager
 import android.widget.RadioButton
 import com.demo.phy.phybasedemo.R
 import com.demo.phy.phybasedemo.base.BaseActivity

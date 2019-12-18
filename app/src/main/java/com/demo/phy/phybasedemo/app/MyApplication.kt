@@ -5,7 +5,7 @@ import android.app.ActivityManager
 import android.app.Application
 import android.content.Context
 import android.os.Process
-import android.support.multidex.MultiDex
+import androidx.multidex.MultiDex
 import com.demo.phy.phybasedemo.utils.ConfigInfo
 import com.tencent.mm.opensdk.openapi.IWXAPI
 import com.tencent.mm.opensdk.openapi.WXAPIFactory

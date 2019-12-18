@@ -2,8 +2,8 @@ package com.demo.phy.phybasedemo.ui.fragment.activity
 
 import android.content.Context
 import android.content.Intent
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentTransaction
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import android.widget.CompoundButton
 import com.demo.phy.phybasedemo.R
 import com.demo.phy.phybasedemo.base.BaseActivity

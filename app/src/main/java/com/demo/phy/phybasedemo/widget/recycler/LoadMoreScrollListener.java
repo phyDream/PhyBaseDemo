@@ -1,7 +1,7 @@
 package com.demo.phy.phybasedemo.widget.recycler;
 
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Project:CustomRecycleView

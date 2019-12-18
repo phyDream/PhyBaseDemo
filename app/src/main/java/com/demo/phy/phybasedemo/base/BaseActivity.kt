@@ -5,9 +5,9 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
-import android.support.annotation.CallSuper
-import android.support.annotation.CheckResult
-import android.support.v4.graphics.ColorUtils
+import androidx.annotation.CallSuper
+import androidx.annotation.CheckResult
+import androidx.core.graphics.ColorUtils
 import android.view.KeyEvent
 import android.view.View
 import android.view.WindowManager

@@ -1,6 +1,6 @@
 package com.demo.phy.phybasedemo.ui.main.activity
 
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.demo.phy.phybasedemo.R
 import com.demo.phy.phybasedemo.base.BaseActivity
 import com.demo.phy.phybasedemo.data.bean.MainListBean
@@ -25,7 +25,7 @@ import kotlinx.android.synthetic.main.top_bar_layout.*
  * Created by phy on 2019/1/3.
  * 主界面 - 带分页和查询的list
  */
-class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView{
+class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView {
 
     //region 变量
     private var mAdapter: MainListAdapter? = null
@@ -43,6 +43,7 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView{
     }
 
     override fun initView() {
+        lifecycle.addObserver(pPresenter)
         center_title.text = getString(R.string.app_name)
         StatusBarUtil.setStatusBarColorAndFontColor(this, R.color.bg_top_bar)
         mAdapter = MainListAdapter(mData)

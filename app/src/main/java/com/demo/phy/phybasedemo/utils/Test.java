@@ -34,7 +34,6 @@ public class Test {
     public static void main(String[] args){
 //        test1();
 //        test2();
-        test3();
     }
 
     public static void test1(){
@@ -75,16 +74,5 @@ public class Test {
         System.out.print(list.toString());
     }
 
-    public static void test3(){
-        try {
-            Field field = user.getClass().getDeclaredField("name");
-            field.set(user,"new");
-            System.out.print(user);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-    }
 
 }

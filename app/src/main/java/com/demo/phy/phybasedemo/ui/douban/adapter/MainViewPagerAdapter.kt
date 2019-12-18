@@ -1,9 +1,9 @@
 package com.demo.phy.phybasedemo.ui.douban.adapter
 
 
-import android.support.v4.app.FragmentStatePagerAdapter
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
+import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 
 /**
  * Created by 蒲弘宇的本地账户 on 2018/5/7.
@@ -14,7 +14,7 @@ class MainViewPagerAdapter(fm: FragmentManager, private val fragmentList: List<F
         return fragmentList.size
     }
 
-    override fun getItem(position: Int): android.support.v4.app.Fragment {
+    override fun getItem(position: Int): Fragment {
         return fragmentList.get(position)
     }
 }

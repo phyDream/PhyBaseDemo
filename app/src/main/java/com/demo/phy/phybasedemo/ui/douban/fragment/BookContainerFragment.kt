@@ -2,7 +2,7 @@ package com.demo.phy.phybasedemo.ui.douban.fragment
 
 
 import android.content.Context
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.View
 import com.demo.phy.phybasedemo.R
 import com.demo.phy.phybasedemo.base.BaseFragment

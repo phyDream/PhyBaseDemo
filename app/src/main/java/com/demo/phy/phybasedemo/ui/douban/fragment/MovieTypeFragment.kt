@@ -5,8 +5,8 @@ import android.app.Fragment
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.widget.GridLayout
 import com.chad.library.adapter.base.BaseQuickAdapter
@@ -52,7 +52,7 @@ class MovieTypeFragment : BaseFragment<MovieTypeView,MovieTypePresenter>(),Movie
 
     override fun initView(view: View?) {
         mAdapter = MovieListAdapter(R.layout.item_movie, context!!,mMovies)
-        showContentRecyclerView.layoutManager = GridLayoutManager(activity,COLUMNS, GridLayout.VERTICAL,false) as RecyclerView.LayoutManager?
+        showContentRecyclerView.layoutManager = GridLayoutManager(activity, COLUMNS, GridLayout.VERTICAL, false) as RecyclerView.LayoutManager?
         showContentRecyclerView.adapter = mAdapter
     }
 
