@@ -1,6 +1,7 @@
 package com.demo.phy.phybasedemo.ui.files.adpter;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import com.demo.phy.phybasedemo.utils.Constant;
 import com.demo.phy.phybasedemo.utils.TimeUtils;
 import com.demo.phy.phybasedemo.utils.TransformUtil;
 
+import java.io.File;
 import java.text.DecimalFormat;
 import java.util.List;
 
@@ -117,6 +119,18 @@ public class FileListAdapter extends BaseAdapter {
                     break;
                 case Constant.ZIP:
                     houlder.img_fileType.setImageResource(R.drawable.ic_file_zip);
+                    break;
+                case Constant.PNG:
+                    Uri uri = Uri.fromFile(new File(file.getFilePath()));
+                    houlder.img_fileType.setImageURI(uri);
+                    break;
+                case Constant.JPEG:
+                    uri = Uri.fromFile(new File(file.getFilePath()));
+                    houlder.img_fileType.setImageURI(uri);
+                    break;
+                case Constant.JPG:
+                    uri = Uri.fromFile(new File(file.getFilePath()));
+                    houlder.img_fileType.setImageURI(uri);
                     break;
                 default:
                     houlder.img_fileType.setImageResource(R.drawable.ic_file_unknow);

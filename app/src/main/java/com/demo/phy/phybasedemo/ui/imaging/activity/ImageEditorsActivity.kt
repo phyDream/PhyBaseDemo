@@ -27,6 +27,7 @@ class ImageEditorsActivity : BaseActivity<ImageEditorsView, ImageEditorsPresente
     }
 
     private var path = ""
+    private var pathSave = ""
 
     companion object {
 
@@ -58,8 +59,8 @@ class ImageEditorsActivity : BaseActivity<ImageEditorsView, ImageEditorsPresente
                 appDir.mkdirs()
             }
             val file = File(appDir, System.currentTimeMillis().toString() + ".jpg")
-            file.toURI()
             toEditImage(uri,file.absolutePath)
+            img_edit.setImageURI(uri)
         }
     }
 
@@ -78,15 +79,16 @@ class ImageEditorsActivity : BaseActivity<ImageEditorsView, ImageEditorsPresente
     }
 
     fun toEditImage(uri: Uri, saveToPath: String) {
+        pathSave = saveToPath
         startActivityForResult(
-                Intent(this, IMGEditActivity::class.java)
-                        .putExtra(IMGEditActivity.EXTRA_IMAGE_URI, uri)
+                Intent(this, IMGEditActivity::class.java).putExtra(IMGEditActivity.EXTRA_IMAGE_URI, uri)
                         .putExtra(IMGEditActivity.EXTRA_IMAGE_SAVE_PATH, saveToPath), REQ_IMAGE_EDIT
         )
     }
 
     fun onImageEditDone() {
-
+        val uri  = Uri.fromFile(File(pathSave))
+        img_edit.setImageURI(uri)
     }
 
 }
